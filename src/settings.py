@@ -31,7 +31,7 @@ CONVENTION = 'title'
 # modules default settings
 MODULES_SETTINGS = {
     'fb': {
-        'interval': 0,
+        'interval': 60,
         'host': 'localhost',
         'port': 3306,
         'user': 'root',
@@ -40,12 +40,11 @@ MODULES_SETTINGS = {
         'temp': '/tmp'
     },
     'synker': {
-        'interval': 0,
+        'interval': 30,
         'localdir': '',
-        'pattern': '.*',
-        'limit': 0,
+        'pattern': '*',
         'clouddir': '/backup',
-        'mtimefile': '/mtime.txt',
+        'limit': 0,
         'token': ''
     }
 }
