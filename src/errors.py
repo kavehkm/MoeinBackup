@@ -1,23 +1,21 @@
 class BaseError(Exception):
     """Base Error"""
-    def __init__(self, error='', details=''):
-        self.error = error
+    msg = 'base error'
+
+    def __init__(self, msg='', details=''):
+        if msg:
+            self.msg = msg
         self.details = details
 
     def __str__(self):
-        return self.error
+        return self.msg
 
 
 class NetworkError(BaseError):
     """Network Error"""
-    pass
+    msg = 'network error'
 
 
 class ModuleError(BaseError):
     """Module Error"""
-    def __init__(self, module, error='', details=''):
-        self.module = module
-        super().__init__(error, details)
-
-    def __str__(self):
-        return '{}: {}'.format(self.module, self.error)
+    msg = 'module error'

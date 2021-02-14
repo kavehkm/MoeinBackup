@@ -6,8 +6,6 @@ from src import errors
 
 class BaseModule(object):
     """Base Module"""
-    __module_name__ = 'base_module'
-
     def __init__(self, interval=0):
         self._ran = 0
         # validation
@@ -18,17 +16,13 @@ class BaseModule(object):
             error = 'invalid interval'
         else:
             if interval < 0:
-                error = 'interval cannot be negative integer'
+                error = 'interval cannot be negative'
         if error:
-            raise errors.ModuleError(self.name, error)
+            raise errors.ModuleError(error)
         self._interval = interval
 
-    @property
-    def name(self):
-        return self.__module_name__
-
     def _do(self):
-        print(self.name, ': ', self._ran)
+        print(self.__class__.__name__, ': ', self._ran)
 
     def run(self):
         if time() - self._ran > self._interval:
