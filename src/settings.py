@@ -32,12 +32,11 @@ CONVENTION = 'title'
 MODULES_SETTINGS = {
     'fb': {
         'interval': 60,
-        'host': 'localhost',
-        'port': 3306,
+        'instance': 'localhost',
         'user': 'root',
         'password': 's3cret',
-        'dbname': 'dbname',
-        'temp': '/tmp'
+        'temp': '/tmp',
+        'dest': ''
     },
     'synker': {
         'interval': 30,
