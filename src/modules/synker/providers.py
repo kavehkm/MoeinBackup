@@ -101,7 +101,7 @@ class DropboxProvider(Provider):
                 raise ProviderAPIError(details=r.json()['error_summary'])
             elif r.status_code == 429:
                 raise ProviderLimitReachError
-            elif r.status_code == 500:
+            else:
                 raise ProviderInternalError
 
     def get_files(self, path, recursive=True):
@@ -133,7 +133,6 @@ class DropboxProvider(Provider):
             'data': content
         }
         self._send_request(self._urls['upload'], **p)
-        print('{} * {} uploaded to cloud successfully.'.format(path, mtime))
 
     def delete(self, path):
         p = {
@@ -145,4 +144,3 @@ class DropboxProvider(Provider):
             }
         }
         self._send_request(self._urls['delete'], **p)
-        print('{} deleted from cloud.'.format(path))
