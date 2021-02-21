@@ -99,5 +99,7 @@ class MB(object):
         if isinstance(e, errors.NetworkError):
             self._ui.connecting()
             self._internet.connecting()
+        elif isinstance(e, errors.ModuleError):
+            self._ui.show_message('{} ---> {}'.format(e.msg, e.details), 0)
         else:
             self._ui.show_message(str(e), 0)
