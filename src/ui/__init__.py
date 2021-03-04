@@ -1,6 +1,11 @@
+# internal
+from src.signals import UISignals
+
+
 class BaseUI(object):
     """Base UI"""
     def __init__(self):
+        self.signals = UISignals()
         self._bootstrap()
 
     def _bootstrap(self):
