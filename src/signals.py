@@ -10,3 +10,10 @@ class InternetSignals(QObject):
 class MBSignals(QObject):
     """MB Signals"""
     error = pyqtSignal(object)
+
+
+class UISignals(QObject):
+    """UI Signals"""
+    action = pyqtSignal()
+    get_settings = pyqtSignal()
+    set_settings = pyqtSignal()

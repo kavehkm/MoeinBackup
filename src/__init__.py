@@ -42,6 +42,11 @@ class MB(object):
         # MB
         self._signals.error.connect(self._error_handle)
         log.debug('error-handle-signal connected')
+        # UI
+        self._ui.signals.action.connect(self.action)
+        self._ui.signals.get_settings.connect(self.get_settings)
+        self._ui.signals.set_settings.connct(self.set_settings)
+        log.debug('ui-signals connected')
         log.debug('MB signals connected')
 
     def _init_modules(self, s):
