@@ -6,18 +6,20 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 
-# HEART BEAT
+# HEARTBEAT
 HEARTBEAT = 10 * 1000
 
 
-# INTERNET SETTINGS
-INTERNET_ADDRESS = '1.1.1.1'
-INTERNET_PORT = 53
-INTERNET_TIMEOUT = 3
-INTERNET_INTERVAL = 5
+# INTERNET
+INTERNET = {
+    'address': '1.1.1.1',
+    'port': 53,
+    'timeout': 3,
+    'interval': 5 * 1000
+}
 
 
-# MODULES SETTINGS
+# MODULES
 MODULES = ('fb', 'synker')
 MODULES_DIR = 'src.modules'
 MODULES_CONVENTION = 'title'
@@ -41,7 +43,14 @@ MODULES_SETTINGS = {
 }
 
 
-# SETTINGS API
-SETTINGS_API_FILENAME = 'settings.ini'
-SETTINGS_API_FILEPATH = os.path.join(BASE_DIR, SETTINGS_API_FILENAME)
-SETTINGS_API_DEFAULT = {**MODULES_SETTINGS}
+# CONFIG
+CONFIG_FILENAME = 'settings.ini'
+CONFIG_FILEPATH = os.path.join(BASE_DIR, CONFIG_FILENAME)
+CONFIG_DEFAULT = {**MODULES_SETTINGS}
+
+
+# LOG
+LOG_LEVEL = 'DEBUG'
+LOG_FILENAME = 'log/logs.log'
+LOG_FILEPATH = os.path.join(BASE_DIR, LOG_FILENAME)
+LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'

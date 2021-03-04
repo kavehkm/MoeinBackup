@@ -5,7 +5,8 @@ import pathlib
 # internal
 from src.errors import ModuleError
 from src.modules import BaseModule
-from src.modules.synker.providers import ProviderAPIError, DropboxProvider
+from src.modules.synker.providers import DropboxProvider
+from src.modules.synker.providers.errors import ProviderAPIError
 
 
 class File(object):

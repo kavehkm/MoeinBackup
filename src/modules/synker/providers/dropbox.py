@@ -3,60 +3,11 @@ import json
 import requests
 from datetime import datetime
 # internal
-from src.errors import NetworkError, ModuleError
+from src.errors import NetworkError
+from src.modules.synker.providers.errors import *
 
 
-class ProviderError(ModuleError):
-    """Provider Error"""
-    msg = 'cloud provider base error'
-
-
-class ProviderBadInputError(ProviderError):
-    """Provider Bad Input Error"""
-    msg = 'cloud provider bad input parameter'
-
-
-class ProviderAuthError(ProviderError):
-    """Provider Auth Error"""
-    msg = 'cloud provider invalid authentication credentials'
-
-
-class ProviderAccessError(ProviderError):
-    """Provider Access Error"""
-    msg = 'cloud provider access dined'
-
-
-class ProviderAPIError(ProviderError):
-    """Provider API Error"""
-    msg = 'cloud provider api error'
-
-
-class ProviderLimitReachError(ProviderError):
-    """Provider Limit Reach Error"""
-    msg = 'cloud provider limit reach'
-
-
-class ProviderInternalError(ProviderError):
-    """Provider Internal Error"""
-    msg = 'cloud provider internal error'
-
-
-class Provider(object):
-    """Base Provider"""
-    def get_files(self, path, recursive=True):
-        pass
-
-    def upload(self, content, path, mtime):
-        pass
-
-    def download(self, path):
-        pass
-
-    def delete(self, path):
-        pass
-
-
-class DropboxProvider(Provider):
+class DropboxProvider(object):
     """Dropbox Provider"""
     _datetime_format = '%Y-%m-%dT%H:%M:%SZ'
     _urls = {
