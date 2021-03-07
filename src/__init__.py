@@ -50,10 +50,12 @@ class MB(object):
         log.debug('MB signals connected')
 
     def _init_modules(self, s):
-        for m in settings.MODULES:
-            module = importlib.import_module(settings.MODULES_DIR + '.' + m)
-            cls = getattr(m, settings.MODULES_CONVENTION)()
-            self._modules.append(getattr(module, cls)(**s[m]))
+        modules = []
+        for module_name in settings.MODULES:
+            module = importlib.import_module(settings.MODULES_DIR + '.' + module_name)
+            cls = getattr(module_name, settings.MODULES_CONVENTION)()
+            modules.append(getattr(module, cls)(**s[module_name]))
+        self._modules = modules
         self._initialized = True
 
     def _run_modules(self):
