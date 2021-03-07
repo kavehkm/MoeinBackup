@@ -40,7 +40,8 @@ class MB(object):
         self._internet.signals.connected.connect(self.start)
         log.debug('internet-signal connected')
         # MB
-        self._signals.error.connect(self._error_handle)
+        self._signals.error[object].connect(self._error_handle)
+        self._signals.error[object, bool].connect(self._error_handle)
         log.debug('error-handle-signal connected')
         # UI
         self._ui.signals.action.connect(self.action)
@@ -64,7 +65,7 @@ class MB(object):
             for module in self._modules:
                 module.run()
         except Exception as e:
-            self._signals.error.emit(e, True)
+            self._signals.error[object].emit(e)
         finally:
             self._lock = False
 
@@ -83,7 +84,7 @@ class MB(object):
             config.set_bulk(s)
             config.save()
         except Exception as e:
-            self._signals.error.emit(e, False)
+            self._signals.error[object, bool].emit(e, False)
         else:
             self._ui.show_message('settings updated', 1)
 
@@ -99,7 +100,7 @@ class MB(object):
                 self._init_modules(s)
                 log.debug('modules initialized successfully')
             except Exception as e:
-                self._signals.error.emit(e, True)
+                self._signals.error[object].emit(e)
         if self._initialized:
             log.debug('modules already initialized')
             log.debug('about to put ui on running state')
@@ -124,7 +125,7 @@ class MB(object):
         else:
             self.start()
 
-    def _error_handle(self, e, continues):
+    def _error_handle(self, e, continues=True):
         msg = str(e)
         details = e.details if hasattr(e, 'details') else ''
         log.error('%s:%s', msg, details)
