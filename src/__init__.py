@@ -130,12 +130,11 @@ class MB(object):
         log.error('%s:%s', msg, details)
         self.stop()
         log.debug('about to dispatch and handle error')
-        if continues:
-            if isinstance(e, errors.NetworkError):
-                log.debug('about to put ui on connecting state')
-                self._ui.connecting()
-                log.info('try connecting')
-                self._internet.connecting()
+        if isinstance(e, errors.NetworkError) and continues:
+            log.debug('about to put ui on connecting state')
+            self._ui.connecting()
+            log.info('try connecting')
+            self._internet.connecting()
         else:
             log.debug('about to show error message on ui')
             self._ui.show_message(msg, 0)
