@@ -64,7 +64,7 @@ class MB(object):
             for module in self._modules:
                 module.run()
         except Exception as e:
-            self._signals.error.emit(e)
+            self._signals.error.emit(e, True)
         finally:
             self._lock = False
 
@@ -83,7 +83,7 @@ class MB(object):
             config.set_bulk(s)
             config.save()
         except Exception as e:
-            self._signals.error.emit(e)
+            self._signals.error.emit(e, False)
         else:
             self._ui.show_message('settings updated', 1)
 
@@ -99,7 +99,7 @@ class MB(object):
                 self._init_modules(s)
                 log.debug('modules initialized successfully')
             except Exception as e:
-                self._signals.error.emit(e)
+                self._signals.error.emit(e, True)
         if self._initialized:
             log.debug('modules already initialized')
             log.debug('about to put ui on running state')
@@ -124,22 +124,18 @@ class MB(object):
         else:
             self.start()
 
-    def _error_handle(self, e):
-        # create log message
-        if isinstance(e, errors.BaseError):
-            msg = e.msg
-            if e.details:
-                msg += ': {}'.format(e.details)
-        else:
-            msg = str(e)
-        log.error(msg)
+    def _error_handle(self, e, continues):
+        msg = str(e)
+        details = e.details if hasattr(e, 'details') else ''
+        log.error('%s:%s', msg, details)
         self.stop()
         log.debug('about to dispatch and handle error')
-        if isinstance(e, errors.NetworkError):
-            log.debug('about to put ui on connecting state')
-            self._ui.connecting()
-            log.info('try connecting')
-            self._internet.connecting()
+        if continues:
+            if isinstance(e, errors.NetworkError):
+                log.debug('about to put ui on connecting state')
+                self._ui.connecting()
+                log.info('try connecting')
+                self._internet.connecting()
         else:
-            log.debug('about to show error message')
-            self._ui.show_message(str(e), 0)
+            log.debug('about to show error message on ui')
+            self._ui.show_message(msg, 0)

@@ -9,7 +9,7 @@ class InternetSignals(QObject):
 
 class MBSignals(QObject):
     """MB Signals"""
-    error = pyqtSignal(object)
+    error = pyqtSignal(object, bool)
 
 
 class UISignals(QObject):
