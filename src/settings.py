@@ -54,3 +54,14 @@ LOG_LEVEL = 'DEBUG'
 LOG_FILENAME = 'log/logs.log'
 LOG_FILEPATH = os.path.join(BASE_DIR, LOG_FILENAME)
 LOG_FORMAT = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+
+
+# TRANSLATION
+LANGUAGES = (
+    ('en', 'English'),
+    ('fa', 'Persian')
+)
+LANG_CODE = 'fa'
+TRANSLATION_DOMAIN = 'mb'
+LOCALE_DIRNAME = 'locale'
+LOCALE_DIRPATH = os.path.join(BASE_DIR, LOCALE_DIRNAME)
