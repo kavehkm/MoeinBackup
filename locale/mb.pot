@@ -1,0 +1,117 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2021-03-08 07:49+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=cp1256\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+
+
+#: .\__init__.py:90
+msgid "settings updated"
+msgstr ""
+
+#: .\errors.py:7
+msgid "base error"
+msgstr ""
+
+#: .\errors.py:20
+msgid "network error"
+msgstr ""
+
+#: .\errors.py:25
+msgid "module error"
+msgstr ""
+
+#: .\modules\__init__.py:17
+msgid "invalid interval"
+msgstr ""
+
+#: .\modules\__init__.py:20
+msgid "interval cannot be negative"
+msgstr ""
+
+#: .\modules\fb\__init__.py:20
+msgid "instance is required"
+msgstr ""
+
+#: .\modules\fb\__init__.py:22
+msgid "user is required"
+msgstr ""
+
+#: .\modules\fb\__init__.py:24
+msgid "password is required"
+msgstr ""
+
+#: .\modules\fb\__init__.py:26
+msgid "invalid temp"
+msgstr ""
+
+#: .\modules\fb\__init__.py:28
+msgid "invalid destination"
+msgstr ""
+
+#: .\modules\fb\__init__.py:35
+msgid "cannot connect to database"
+msgstr ""
+
+#: .\modules\fb\__init__.py:87
+msgid "cannot take backup"
+msgstr ""
+
+#: .\modules\synker\__init__.py:84
+msgid "invalid localdir"
+msgstr ""
+
+#: .\modules\synker\__init__.py:86
+msgid "pattern is required"
+msgstr ""
+
+#: .\modules\synker\__init__.py:88
+msgid "invalid clouddir"
+msgstr ""
+
+#: .\modules\synker\__init__.py:90
+msgid "token is required"
+msgstr ""
+
+#: .\modules\synker\__init__.py:95
+msgid "invalid limit"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:8
+msgid "cloud provider base error"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:13
+msgid "cloud provider bad input parameter"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:18
+msgid "cloud provider invalid authentication credentials"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:23
+msgid "cloud provider access dined"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:28
+msgid "cloud provider api error"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:33
+msgid "cloud provider limit reach"
+msgstr ""
+
+#: .\modules\synker\providers\errors.py:38
+msgid "cloud provider internal error"
+msgstr ""
+

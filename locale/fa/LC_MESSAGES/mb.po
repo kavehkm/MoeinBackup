@@ -1,0 +1,118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR ORGANIZATION
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2021-03-08 07:49+0330\n"
+"PO-Revision-Date: 2021-03-08 12:16+0330\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: pygettext.py 1.5\n"
+"X-Generator: Poedit 2.4.2\n"
+"Last-Translator: \n"
+"Plural-Forms: nplurals=2; plural=(n==0 || n==1);\n"
+"Language: fa\n"
+
+#: .\__init__.py:90
+msgid "settings updated"
+msgstr "تنظیمات به روز شده"
+
+#: .\errors.py:7
+msgid "base error"
+msgstr "خطای پایه"
+
+#: .\errors.py:20
+msgid "network error"
+msgstr "خطای شبکه"
+
+#: .\errors.py:25
+msgid "module error"
+msgstr "خطای ماژول"
+
+#: .\modules\__init__.py:17
+msgid "invalid interval"
+msgstr "فاصله زمانی معتبر نیست"
+
+#: .\modules\__init__.py:20
+msgid "interval cannot be negative"
+msgstr "فاصله زمانی نمیتواند منفی باشد"
+
+#: .\modules\fb\__init__.py:20
+msgid "instance is required"
+msgstr "آدرس پایگاه داده مورد نیاز است"
+
+#: .\modules\fb\__init__.py:22
+msgid "user is required"
+msgstr "نام کاربری پایگاه داده مورد نیاز است"
+
+#: .\modules\fb\__init__.py:24
+msgid "password is required"
+msgstr "رمز عبور پایگاه داده مورد نیاز است"
+
+#: .\modules\fb\__init__.py:26
+msgid "invalid temp"
+msgstr "دسترسی به پوشه ذخیره سازی موقت امکانپذیر نیست"
+
+#: .\modules\fb\__init__.py:28
+msgid "invalid destination"
+msgstr "دسترسی به پوشه ذخیره سازی امکانپذیر نیست"
+
+#: .\modules\fb\__init__.py:35
+msgid "cannot connect to database"
+msgstr "ارتباط با پایگاه داده برقرار نشد"
+
+#: .\modules\fb\__init__.py:87
+msgid "cannot take backup"
+msgstr "پشتیبان گیری با خطا مواجه شده است"
+
+#: .\modules\synker\__init__.py:84
+msgid "invalid localdir"
+msgstr "دسترسی به پوشه ی محلی فایل های پشتیبان امکانپذیر نیست"
+
+#: .\modules\synker\__init__.py:86
+msgid "pattern is required"
+msgstr "الگوی فایل پشتیبان مورد نیاز است"
+
+#: .\modules\synker\__init__.py:88
+msgid "invalid clouddir"
+msgstr "دسترسی به پوشه ی ابری فایل های پشتیبان امکانپذیر نیست"
+
+#: .\modules\synker\__init__.py:90
+msgid "token is required"
+msgstr "توکن سرویس ابری مورد نیاز است"
+
+#: .\modules\synker\__init__.py:95
+msgid "invalid limit"
+msgstr "محدودیت حجم سرویس ابری معتبر نیست"
+
+#: .\modules\synker\providers\errors.py:8
+msgid "cloud provider base error"
+msgstr "خطای پایه سرویس ابری"
+
+#: .\modules\synker\providers\errors.py:13
+msgid "cloud provider bad input parameter"
+msgstr "داده های ارسال شده به سرویس ابری معتبر نیست"
+
+#: .\modules\synker\providers\errors.py:18
+msgid "cloud provider invalid authentication credentials"
+msgstr "اطلاعات احراز هویت سرویس ابری معتبر نیست"
+
+#: .\modules\synker\providers\errors.py:23
+msgid "cloud provider access dined"
+msgstr "دسترسی به سرویس ابری کافی نیست"
+
+#: .\modules\synker\providers\errors.py:28
+msgid "cloud provider api error"
+msgstr "کارگزار سرویس ابری با خطا مواجه شده است"
+
+#: .\modules\synker\providers\errors.py:33
+msgid "cloud provider limit reach"
+msgstr "عبور از حد مجاز درخواست از سرویس ابری, دوباره تلاش کنید"
+
+#: .\modules\synker\providers\errors.py:38
+msgid "cloud provider internal error"
+msgstr "خطای داخلی سرویس ابری"
