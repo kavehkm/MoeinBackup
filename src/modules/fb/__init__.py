@@ -3,6 +3,7 @@ import os
 import zipfile
 from datetime import datetime
 # internal
+from src.translation import _
 from src.modules import BaseModule
 from src.errors import ModuleError
 # external
@@ -16,22 +17,22 @@ class Fb(BaseModule):
         # validation
         error, details = '', ''
         if not instance:
-            error = 'instance is required'
+            error = _('instance is required')
         elif not user:
-            error = 'user is required'
+            error = _('user is required')
         elif not password:
-            error = 'password is required'
+            error = _('password is required')
         elif not temp or not os.access(temp, 7):
-            error = 'invalid temp'
+            error = _('invalid temp')
         elif not dest or not os.access(dest, 7):
-            error = 'invalid destination'
+            error = _('invalid destination')
         else:
             try:
                 connection = self._get_connection(instance, user, password)
                 with connection.cursor() as c:
                     c.execute("SELECT @@VERSION")
             except pyodbc.Error as e:
-                error = 'cannot connect to database'
+                error = _('cannot connect to database')
                 details = str(e)
         if error:
             raise ModuleError(error, details)
@@ -83,6 +84,6 @@ class Fb(BaseModule):
         try:
             self._take(self.databases)
         except pyodbc.Error as e:
-            raise ModuleError('cannot take backup', str(e))
+            raise ModuleError(_('cannot take backup'), str(e))
         else:
             self._move()

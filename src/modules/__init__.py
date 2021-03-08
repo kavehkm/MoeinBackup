@@ -1,6 +1,7 @@
 # standard
 from time import time
 # internal
+from src.translation import _
 from src.errors import ModuleError
 
 
@@ -13,10 +14,10 @@ class BaseModule(object):
         try:
             interval = int(interval)
         except Exception:
-            error = 'invalid interval'
+            error = _('invalid interval')
         else:
             if interval < 0:
-                error = 'interval cannot be negative'
+                error = _('interval cannot be negative')
         if error:
             raise ModuleError(error)
         self._interval = interval

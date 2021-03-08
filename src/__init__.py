@@ -2,6 +2,7 @@
 import importlib
 import threading
 # internal
+from src.translation import _
 from src.utils import Internet
 from src.signals import MBSignals
 from src import errors, settings, config, log
@@ -86,7 +87,7 @@ class MB(object):
         except Exception as e:
             self._signals.error[object, bool].emit(e, False)
         else:
-            self._ui.show_message('settings updated', 1)
+            self._ui.show_message(_('settings updated'), 1)
 
     def start(self):
         log.info('MB start')

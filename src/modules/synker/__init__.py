@@ -3,6 +3,7 @@ import os
 import bisect
 import pathlib
 # internal
+from src.translation import _
 from src.errors import ModuleError
 from src.modules import BaseModule
 from src.modules.synker.providers import DropboxProvider
@@ -80,18 +81,18 @@ class Synker(BaseModule):
         # validation
         error = ''
         if not localdir or not os.access(localdir, 7):
-            error = 'invalid localdir'
+            error = _('invalid localdir')
         elif not pattern:
-            error = 'pattern is required'
+            error = _('pattern is required')
         elif not clouddir or not clouddir.startswith('/'):
-            error = 'invalid clouddir'
+            error = _('invalid clouddir')
         elif not token:
-            error = 'token is required'
+            error = _('token is required')
         else:
             try:
                 limit = int(limit)
             except Exception:
-                error = 'invalid limit'
+                error = _('invalid limit')
         if error:
             raise ModuleError(error)
         self._localdir = localdir

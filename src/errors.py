@@ -1,6 +1,10 @@
+# internal
+from src.translation import _
+
+
 class BaseError(Exception):
     """Base Error"""
-    msg = 'base error'
+    msg = _('base error')
 
     def __init__(self, msg='', details=''):
         if msg:
@@ -13,9 +17,9 @@ class BaseError(Exception):
 
 class NetworkError(BaseError):
     """Network Error"""
-    msg = 'network error'
+    msg = _('network error')
 
 
 class ModuleError(BaseError):
     """Module Error"""
-    msg = 'module error'
+    msg = _('module error')
